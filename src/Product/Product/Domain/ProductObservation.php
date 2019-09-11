@@ -2,11 +2,13 @@
 namespace CTIC\Product\Product\Domain;
 
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
 use CTIC\App\Base\Domain\IdentifiableTrait;
 use CTIC\Product\Product\Domain\Validation\ProductObservationValidation;
 use CTIC\Product\Product\Domain\Product;
 
 /**
+ * @ApiResource
  * @ORM\Entity(repositoryClass="CTIC\Product\Product\Infrastructure\Repository\ProductObservationRepository")
  */
 class ProductObservation implements ProductObservationInterface

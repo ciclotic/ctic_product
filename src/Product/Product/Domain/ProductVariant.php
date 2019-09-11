@@ -3,12 +3,14 @@ namespace CTIC\Product\Product\Domain;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
 use CTIC\App\Base\Domain\IdentifiableTrait;
 use CTIC\Product\Product\Domain\Validation\ProductVariantValidation;
 use CTIC\Product\Product\Domain\Product;
 use CTIC\App\RealizationArea\Domain\RealizationArea;
 
 /**
+ * @ApiResource
  * @ORM\Entity(repositoryClass="CTIC\Product\Product\Infrastructure\Repository\ProductVariantRepository")
  */
 class ProductVariant implements ProductVariantInterface

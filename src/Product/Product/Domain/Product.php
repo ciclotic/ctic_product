@@ -5,6 +5,7 @@ use CTIC\Product\Attribute\Domain\Attribute;
 use CTIC\Product\Option\Domain\Option;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
 use CTIC\App\Base\Domain\IdentifiableTrait;
 use CTIC\Product\Product\Domain\Validation\ProductValidation;
 use CTIC\App\Company\Domain\Company;
@@ -12,6 +13,7 @@ use CTIC\App\Iva\Domain\Iva;
 use CTIC\App\User\Domain\User;
 
 /**
+ * @ApiResource
  * @ORM\Entity(repositoryClass="CTIC\Product\Product\Infrastructure\Repository\ProductRepository")
  */
 class Product implements ProductInterface

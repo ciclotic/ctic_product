@@ -3,9 +3,11 @@ namespace CTIC\Product\Product\Domain;
 
 use CTIC\Product\Product\Domain\Validation\ProductVariantComposedComplementValidation;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
 use CTIC\App\Base\Domain\IdentifiableTrait;
 
 /**
+ * @ApiResource
  * @ORM\Entity(repositoryClass="CTIC\Product\Product\Infrastructure\Repository\ProductVariantComposedComplementRepository")
  */
 class ProductVariantComposedComplement implements ProductVariantComposedComplementInterface

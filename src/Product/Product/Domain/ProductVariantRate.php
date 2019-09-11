@@ -4,9 +4,11 @@ namespace CTIC\Product\Product\Domain;
 use CTIC\App\Rate\Domain\Rate;
 use CTIC\Product\Product\Domain\Validation\ProductVariantRateValidation;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
 use CTIC\App\Base\Domain\IdentifiableTrait;
 
 /**
+ * @ApiResource
  * @ORM\Entity(repositoryClass="CTIC\Product\Product\Infrastructure\Repository\ProductVariantRateRepository")
  */
 class ProductVariantRate implements ProductVariantRateInterface

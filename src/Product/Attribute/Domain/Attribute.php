@@ -3,11 +3,13 @@ namespace CTIC\Product\Attribute\Domain;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
 use CTIC\App\Base\Domain\IdentifiableTrait;
 use CTIC\Product\Attribute\Domain\Validation\AttributeValidation;
 use CTIC\App\Company\Domain\Company;
 
 /**
+ * @ApiResource
  * @ORM\Entity(repositoryClass="CTIC\Product\Attribute\Infrastructure\Repository\AttributeRepository")
  * @ORM\Table(name="ProductAttribute")
  */

@@ -3,11 +3,13 @@ namespace CTIC\Product\Option\Domain;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
 use CTIC\App\Base\Domain\IdentifiableTrait;
 use CTIC\Product\Option\Domain\Validation\OptionValidation;
 use CTIC\App\Company\Domain\Company;
 
 /**
+ * @ApiResource
  * @ORM\Entity(repositoryClass="CTIC\Product\Option\Infrastructure\Repository\OptionRepository")
  * @ORM\Table(name="ProductOption")
  */
