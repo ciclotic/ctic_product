@@ -1,0 +1,106 @@
+{% import '/Form/theme.html.twig' as formTheme %}
+
+<div class="row">
+    <div class="col-md-12">
+        <form  name="{{ form.vars.name }}" method="{{ form.vars.method }}" action="{{ path('GET_' ~ metadata.parameters.route.root ~ '_' ~  metadata.parameters.route.actions.create) }}">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-8">
+                            {{ formTheme.form_row(form.children.name) }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            {{ formTheme.form_row(form.children.slug) }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            {{ formTheme.form_row(form.children.description) }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            {{ formTheme.form_row(form.children.textTPV) }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            {{ formTheme.form_row(form.children.sku) }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            {{ formTheme.form_row(form.children.order) }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            {{ formTheme.form_row(form.children.barCode) }}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-8">
+                            {{ formTheme.form_row(form.children.isService) }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            {{ formTheme.form_row(form.children.enabledDiscountClient) }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            {{ formTheme.form_row(form.children.iva) }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            {{ formTheme.form_row(form.children.user) }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            {{ formTheme.form_row(form.children.option) }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            {{ formTheme.form_row(form.children.attribute) }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            {{ formTheme.form_row(form.children.enabled) }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            {{ formTheme.form_row(form.children.company) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    {{ formTheme.form_row(form.children.productObservation) }}
+                </div>
+                <div class="col-md-6">
+                    {{ formTheme.form_row(form.children.productDevice) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    {{ formTheme.form_row(form.children.productVariant) }}
+                </div>
+            </div>
+            <br>
+            <div class="form-buttons">
+                {% include '/Form/Buttons/_create.html.twig' with {'paths': {'cancel': path('GET_' ~ metadata.parameters.route.root ~ '_' ~  metadata.parameters.route.actions.list, configuration.vars.route.parameters|default({}))}} %}
+            </div>
+        </form>
+    </div>
+</div>

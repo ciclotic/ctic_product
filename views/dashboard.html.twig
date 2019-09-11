@@ -1,0 +1,60 @@
+{% extends "base.html.twig" %}
+
+{% block title %}- Dashboard{% endblock %}
+
+{% block description %}Usuarios, cuenta, estilos, etc.{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row page-title-div">
+            <div class="col-md-12">
+                <h4 class="title">Dashboard</h4>
+                <p class="sub-title">Configuración.</p>
+            </div>
+            <!-- /.col-md-12 -->
+        </div>
+        <!-- /.row -->
+        <div class="row breadcrumb-div">
+            <div class="col-md-12">
+                <ul class="breadcrumb">
+                    <li><a href="/"><i class="fa fa-home"></i> Home</a></li>
+                    <li class="active">Dashboard</li>
+                </ul>
+            </div>
+            <!-- /.col-md-12 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="container-fluid section">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <a class="dashboard-stat-2 bg-primary" href="/productos/listado">
+                        <div class="stat-content">
+                            <span class="number counter"><i class="fa fa-shopping-cart"></i></span>
+                            <span class="name">Productos</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <a class="dashboard-stat-2 bg-primary" href="/opciones/listado">
+                        <div class="stat-content">
+                            <span class="number counter"><i class="fa fa-shopping-cart"></i></span>
+                            <span class="name">Opciones</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <a class="dashboard-stat-2 bg-primary" href="/atributos/listado">
+                        <div class="stat-content">
+                            <span class="number counter"><i class="fa fa-shopping-cart"></i></span>
+                            <span class="name">Atributos</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scriptsjs %}
+{% endblock %}

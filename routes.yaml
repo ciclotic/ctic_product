@@ -1,0 +1,188 @@
+dashboard:
+    path:     /
+    defaults:
+        _controller: 'CTIC\App\Dashboard\Infrastructure\DashboardController'
+        _controller_method: 'indexAction'
+        _controller_create: 'CTIC\App\Dashboard\Application\CreateDashboardController'
+
+login:
+    path:     /login
+    defaults:
+        _controller: 'CTIC\App\User\Infrastructure\LoginController'
+        _controller_method: 'loginAction'
+        _controller_create: 'CTIC\App\User\Application\CreateLoginController'
+
+logout:
+    path:     /logout
+    defaults:
+        _controller: 'CTIC\App\User\Infrastructure\LoginController'
+        _controller_method: 'logoutAction'
+        _controller_create: 'CTIC\App\User\Application\CreateLoginController'
+
+#Product
+
+GET_productos_listado:
+    path:     /productos/listado
+    defaults:
+        _controller: 'CTIC\Product\Product\Infrastructure\ProductController'
+        _controller_method: 'indexAction'
+        _controller_create: 'CTIC\Product\Product\Application\CreateProductController'
+
+GET_productos_mostrar:
+    path:     /productos/mostrar/{id}
+    defaults:
+        _controller: 'CTIC\Product\Product\Infrastructure\ProductController'
+        _controller_method: 'showAction'
+        _controller_create: 'CTIC\Product\Product\Application\CreateProductController'
+
+GET_productos_crear:
+    path:     /productos/crear
+    methods:  [GET, POST]
+    defaults:
+        _controller: 'CTIC\Product\Product\Infrastructure\ProductController'
+        _controller_method: 'createAction'
+        _controller_create: 'CTIC\Product\Product\Application\CreateProductController'
+
+GET_productos_modificar:
+    path:     /productos/modificar/{id}
+    methods:  [GET, POST]
+    defaults:
+        _controller: 'CTIC\Product\Product\Infrastructure\ProductController'
+        _controller_method: 'updateAction'
+        _controller_create: 'CTIC\Product\Product\Application\CreateProductController'
+
+POST_productos_eliminar:
+    path:     /productos/eliminar/{id}
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\Product\Product\Infrastructure\ProductController'
+        _controller_method: 'deleteAction'
+        _controller_create: 'CTIC\Product\Product\Application\CreateProductController'
+
+POST_productos_eliminargrupo:
+    path:     /productos/eliminargrupo
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\Product\Product\Infrastructure\ProductController'
+        _controller_method: 'bulkDeleteAction'
+        _controller_create: 'CTIC\Product\Product\Application\CreateProductController'
+
+POST_productos_descargar:
+    path:     /productos/descargar
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\Product\Product\Infrastructure\ProductController'
+        _controller_method: 'downloadAction'
+        _controller_create: 'CTIC\Product\Product\Application\CreateProductController'
+
+#Option
+
+GET_opciones_listado:
+    path:     /opciones/listado
+    defaults:
+        _controller: 'CTIC\Product\Option\Infrastructure\OptionController'
+        _controller_method: 'indexAction'
+        _controller_create: 'CTIC\Product\Option\Application\CreateOptionController'
+
+GET_opciones_mostrar:
+    path:     /opciones/mostrar/{id}
+    defaults:
+        _controller: 'CTIC\Product\Option\Infrastructure\OptionController'
+        _controller_method: 'showAction'
+        _controller_create: 'CTIC\Product\Option\Application\CreateOptionController'
+
+GET_opciones_crear:
+    path:     /opciones/crear
+    methods:  [GET, POST]
+    defaults:
+        _controller: 'CTIC\Product\Option\Infrastructure\OptionController'
+        _controller_method: 'createAction'
+        _controller_create: 'CTIC\Product\Option\Application\CreateOptionController'
+
+GET_opciones_modificar:
+    path:     /opciones/modificar/{id}
+    methods:  [GET, POST]
+    defaults:
+        _controller: 'CTIC\Product\Option\Infrastructure\OptionController'
+        _controller_method: 'updateAction'
+        _controller_create: 'CTIC\Product\Option\Application\CreateOptionController'
+
+POST_opciones_eliminar:
+    path:     /opciones/eliminar/{id}
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\Product\Option\Infrastructure\OptionController'
+        _controller_method: 'deleteAction'
+        _controller_create: 'CTIC\Product\Option\Application\CreateOptionController'
+
+POST_opciones_eliminargrupo:
+    path:     /opciones/eliminargrupo
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\Product\Option\Infrastructure\OptionController'
+        _controller_method: 'bulkDeleteAction'
+        _controller_create: 'CTIC\Product\Option\Application\CreateOptionController'
+
+POST_opciones_descargar:
+    path:     /opciones/descargar
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\Product\Option\Infrastructure\OptionController'
+        _controller_method: 'downloadAction'
+        _controller_create: 'CTIC\Product\Option\Application\CreateOptionController'
+
+#Attribute
+
+GET_atributos_listado:
+    path:     /atributos/listado
+    defaults:
+        _controller: 'CTIC\Product\Attribute\Infrastructure\AttributeController'
+        _controller_method: 'indexAction'
+        _controller_create: 'CTIC\Product\Attribute\Application\CreateAttributeController'
+
+GET_atributos_mostrar:
+    path:     /atributos/mostrar/{id}
+    defaults:
+        _controller: 'CTIC\Product\Attribute\Infrastructure\AttributeController'
+        _controller_method: 'showAction'
+        _controller_create: 'CTIC\Product\Attribute\Application\CreateAttributeController'
+
+GET_atributos_crear:
+    path:     /atributos/crear
+    methods:  [GET, POST]
+    defaults:
+        _controller: 'CTIC\Product\Attribute\Infrastructure\AttributeController'
+        _controller_method: 'createAction'
+        _controller_create: 'CTIC\Product\Attribute\Application\CreateAttributeController'
+
+GET_atributos_modificar:
+    path:     /atributos/modificar/{id}
+    methods:  [GET, POST]
+    defaults:
+        _controller: 'CTIC\Product\Attribute\Infrastructure\AttributeController'
+        _controller_method: 'updateAction'
+        _controller_create: 'CTIC\Product\Attribute\Application\CreateAttributeController'
+
+POST_atributos_eliminar:
+    path:     /atributos/eliminar/{id}
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\Product\Attribute\Infrastructure\AttributeController'
+        _controller_method: 'deleteAction'
+        _controller_create: 'CTIC\Product\Attribute\Application\CreateAttributeController'
+
+POST_atributos_eliminargrupo:
+    path:     /atributos/eliminargrupo
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\Product\Attribute\Infrastructure\AttributeController'
+        _controller_method: 'bulkDeleteAction'
+        _controller_create: 'CTIC\Product\Attribute\Application\CreateAttributeController'
+
+POST_atributos_descargar:
+    path:     /atributos/descargar
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\Product\Attribute\Infrastructure\AttributeController'
+        _controller_method: 'downloadAction'
+        _controller_create: 'CTIC\Product\Attribute\Application\CreateAttributeController'

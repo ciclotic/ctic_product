@@ -1,0 +1,161 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-8">
+                        <label>Nombre</label>
+                        {{ resource.name }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <label>Slug</label>
+                        {{ resource.slug }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <label>Description</label>
+                        {{ resource.description }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <label>Texto TPV</label>
+                        {{ resource.textTPV }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <label>Referencia</label>
+                        {{ resource.sku }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <label>Orden</label>
+                        {{ resource.order }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <label>Código de barras</label>
+                        {{ resource.barCode }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-8">
+                        <label>Es servicio</label>
+                        {{ (resource.isService is empty)? 'No' : 'Si' }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <label>Descuento cliente habilitado</label>
+                        {{ (resource.enabledDiscountClient is empty)? 'No' : 'Si' }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <label>IVA</label>
+                        {{ resource.iva.name }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <label>Usuario</label>
+                        {{ resource.user.name }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <label>Opciones</label>
+                        {% for option in resource.option %}
+                            <p>{{ option.name }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <label>Atributos</label>
+                        {% for attribute in resource.attribute %}
+                            <p>{{ attribute.name }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <label>Habilitado</label>
+                        {{ (resource.enabled is empty)? 'No' : 'Si' }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <label>Empresa</label>
+                        {{ resource.company.taxName }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label>Observaciones</label>
+                {% for productObservation in resource.productObservation %}
+                    <div>
+                        <p><b>{{ productObservation.name }}</b></p>
+                        <p>{{ productObservation.observation }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="col-md-6">
+                <label>Dispositivos</label>
+                {% for productDevice in resource.productDevice %}
+                    <div>
+                        <p><b>{{ productDevice.name }}</b></p>
+                        <p>{{ productDevice.device.name }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label>Variantes del producto</label>
+                {% for productVariant in resource.productVariant %}
+                    <div>
+                        <p><b>{{ productVariant.name }}</b></p>
+                        <p>Slug: {{ productVariant.slug }}</p>
+                        <p>Texto TPV: {{ productVariant.textTPV }}</p>
+                        <p>Descripción: {{ productVariant.description }}</p>
+                        <p>Referencia: {{ productVariant.sku }}</p>
+                        <p>Código de barras: {{ productVariant.barCode }}</p>
+                        <p>Área de realización: {{ productVariant.realizationArea.name }}</p>
+                        <p>Coste: {{ productVariant.cost }}</p>
+                        <p>Tiene stock: {{ (productVariant.stock is empty)? 'No' : 'Si' }}</p>
+                        <p>Es un complemento: {{ (productVariant.isComplement is empty)? 'No' : 'Si' }}</p>
+                        <p>Tiene complementos: {{ (productVariant.hasComplement is empty)? 'No' : 'Si' }}</p>
+                        <p>Habilitado: {{ (productVariant.enabled is empty)? 'No' : 'Si' }}</p>
+                        <p><b>Tarifas:</b></p>
+                        {% for productVariantRate in productVariant.productVariantRate %}
+                            <p>{{ productVariantRate.rate.name }}: {{ productVariantRate.pvp }}&euro; | Comisión: {{ productVariantRate.commission }}</p>
+                        {% endfor %}
+                        <p><b>Compuestos:</b></p>
+                        {% for productVariantComposed in productVariant.productVariantComposed %}
+                            <p>{{ productVariantComposed.name }}:
+                                {% for productVariantComposedComplement in productVariantComposed.productVariantComposedComplement %}
+                                    {{ productVariantComposedComplement.productVariant.name }},
+                                {% endfor %}
+                            </p>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <br>
+        <div class="cancel-button">
+            {% include '/Form/Buttons/_cancel.html.twig' with {'paths': {'cancel': path('GET_' ~ metadata.parameters.route.root ~ '_' ~  metadata.parameters.route.actions.list, configuration.vars.route.parameters|default({}))}} %}
+        </div>
+    </div>
+</div>
